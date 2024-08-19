@@ -76,6 +76,7 @@ Deployment:
 - Mongo Atlas (No-SQL)
 - Jenkins
 - ArgoCD
+- CI/CD
 
 Methodology:
 - Agile
