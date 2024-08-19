@@ -47,6 +47,40 @@ public ResponseEntity<RestaurantDTO> getRestaurantById(@PathVariable("restaurant
 }
 ```
 
+## Technology used:
+Frontend:
+- Angular, Typescript
+- Tool: Vscode
+- Testing: Jasmine , Kamar
+
+Backend:
+- Rest/ Restful
+- Spring boot
+- Microservices
+- Github
+- Junit, TDD, Mockito
+- Tool: IntelliJ
+
+Database:
+- SQL
+- MySQL db
+
+Deployment:
+- Sonar
+- Docker
+- Kubernetes
+- AWS EKS
+- AWS ALB
+- AWS EC2
+- AWS RDS (SQL)
+- Mongo Atlas (No-SQL)
+- Jenkins
+- ArgoCD
+
+Methodology:
+- Agile
+- Scrum
+
 
 
 
