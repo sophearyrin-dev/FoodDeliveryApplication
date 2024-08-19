@@ -1,0 +1,6 @@
+server:
+  port: 9091
+
+eureka:
+  client:
+    register-with-eureka:
