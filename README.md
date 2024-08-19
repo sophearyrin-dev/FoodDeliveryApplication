@@ -1,5 +1,5 @@
 
-# Food Delivery Application
+# Food Delivery Application (In progress)
 
 ## Eureka Server
 - Eureka Server is a key component in microservices architecture, particularly when using Spring Cloud Netflix. It is a service registry that helps manage and coordinate microservices within a distributed system.
