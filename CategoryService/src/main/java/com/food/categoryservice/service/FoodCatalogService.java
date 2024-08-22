@@ -43,7 +43,8 @@ public class FoodCatalogService {
     }
 
     private Restaurant getRestaurantByRestaurantId(int restaurantId) {
-        Restaurant restaurant = restTemplate.getForObject("http://RESTAURANT-SERVICE/"+ restaurantId, Restaurant.class);
+        String url = "http://RESTAURANT-SERVICE/api/v1/food-delivery-app/restaurants/";
+        Restaurant restaurant = restTemplate.getForObject(url + restaurantId, Restaurant.class);
         return restaurant;
     }
 
