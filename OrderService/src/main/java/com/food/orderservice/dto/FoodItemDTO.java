@@ -1,6 +1,5 @@
-package com.food.categoryservice.dto;
+package com.food.orderservice.dto;
 
-import jakarta.persistence.Column;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
