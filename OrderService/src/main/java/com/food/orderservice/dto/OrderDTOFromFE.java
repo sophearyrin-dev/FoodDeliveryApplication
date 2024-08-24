@@ -1,20 +1,15 @@
-package com.food.orderservice.entity;
+package com.food.orderservice.dto;
 
-import com.food.orderservice.dto.FoodItemDTO;
-import com.food.orderservice.dto.Restaurant;
-import com.food.orderservice.dto.UserDTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Document("order")
-public class Order {
+public class OrderDTOFromFE {
     private int orderId;
     private List<FoodItemDTO> foodItems;
     private Restaurant restaurant;
