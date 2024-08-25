@@ -25,3 +25,10 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## If your app.module.ts is not found
+```
+ng new my-app --no-standalone --routing --ssr=false
+
+```
+Ticket issue: https://github.com/angular/angular/issues/52751
