@@ -32,3 +32,7 @@ ng new my-app --no-standalone --routing --ssr=false
 
 ```
 Ticket issue: https://github.com/angular/angular/issues/52751
+
+## Using command
+- Creating module: ng g module restaurant-listing --routing, you will get a folder named restaurant-listing and two files: restaurant-listing-routing.module.ts and restaurant-listing.module.ts
+- Creating component inside restaurant-listing module: ng g c restaurant-listing --module=restaurant-listing
