@@ -36,7 +36,9 @@ export class FoodCatalogueComponent {
   ngOnInit() {
 
     this.route.paramMap.subscribe(params => {
-      this.restaurantId = +params.get('id');
+      // this.restaurantId = +params.get('id');
+      this.restaurantId = +(params.get('id') ?? 0);  // Fallback to 0 if `id` is null
+
     });
 
     this.getFoodItemsByRestaurant(this.restaurantId);
@@ -78,16 +80,28 @@ export class FoodCatalogueComponent {
     }
   }
 
+  // onCheckOut() {
+  //   this.foodItemCart;
+  //   this.orderSummary = {
+  //     foodItemsList: this.foodItemCart,
+  //     restaurant: this.foodItemResponse?.restaurant || null
+  //   }
+  
+  //   this.orderSummary.foodItems = this.foodItemCart;
+  //   this.orderSummary.restaurant = this.foodItemResponse.restaurant;
+  //   this.router.navigate(['/orderSummary'], { queryParams: { data: JSON.stringify(this.orderSummary) } });
+  // }
+
   onCheckOut() {
-    this.foodItemCart;
+    // Ensure that the object matches the FoodCataloguePage interface
     this.orderSummary = {
-      foodItemsList: [],
-      restaurant: null
-    }
-    this.orderSummary.foodItems = this.foodItemCart;
-    this.orderSummary.restaurant = this.foodItemResponse.restaurant;
+      foodItems: this.foodItemCart,  // Correct property name used here
+      restaurant: this.foodItemResponse?.restaurant || null  // Handling potential null value
+    };
+  
     this.router.navigate(['/orderSummary'], { queryParams: { data: JSON.stringify(this.orderSummary) } });
   }
+  
 
 
 

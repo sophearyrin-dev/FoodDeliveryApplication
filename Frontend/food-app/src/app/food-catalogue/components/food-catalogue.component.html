@@ -7,13 +7,13 @@
           Checkout
       </button>
   </div>
-  <p>{{foodItemResponse.restaurant.restaurantDescription}}</p>
+  <p>{{foodItemResponse.restaurant?.description}}</p>
 
   <h2>Food Menu</h2>
   <div class="food-list">
-      <div class="food-item" *ngFor="let food of foodItemResponse.foodItemsList">
+      <div class="food-item" *ngFor="let food of foodItemResponse.foodItems">
           <div class="food-details">
-              <div class="food-name">{{food.itemName}}</div>
+              <div class="food-name">{{food.name}}</div>
               <div class="food-price">&#x20b9; {{food.price}}</div>
           </div>
           <div class="food-quantity">
