@@ -1,21 +1,30 @@
+#server:
+#  port: 9094
+#
+#spring:
+#  application:
+#    name: ORDER-SERVICE
+#
+#  data:
+#    mongodb:
+#      uri: mongodb://localhost:27017/orderdb
+#      database: orderdb
+#
+#
+#eureka:
+#  client:
+#    #    register-with-eureka: true
+#    #    fetch-registry: true
+#    service-url:
+#      defaultZone: http://localhost:8761/eureka/
+#  instance:
+#    hostname: localhost
+
 server:
   port: 9094
 
 spring:
+  profiles:
+    active: dev
   application:
     name: ORDER-SERVICE
-
-  data:
-    mongodb:
-      uri: mongodb://localhost:27017/orderdb
-      database: orderdb
-
-
-eureka:
-  client:
-    #    register-with-eureka: true
-    #    fetch-registry: true
-    service-url:
-      defaultZone: http://localhost:8761/eureka/
-  instance:
-    hostname: localhost
