@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/food-delivery-app/catalogs")
+@CrossOrigin
 public class FoodCatalogueController {
 
     @Autowired

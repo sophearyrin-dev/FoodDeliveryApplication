@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/food-delivery-app/restaurants")
+@CrossOrigin
 public class RestaurantController {
 
     @Autowired
