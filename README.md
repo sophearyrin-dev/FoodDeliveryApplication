@@ -3,6 +3,11 @@
 
 ## Eureka Server
 - Eureka Server is a key component in microservices architecture, particularly when using Spring Cloud Netflix. It is a service registry that helps manage and coordinate microservices within a distributed system.
+- Eureka Server: Acts as a service registry where all microservices register themselves.
+- Eureka Client: Each microservice instance registers with the Eureka server and can also discover other services.
+
+## API Gateway
+An API Gateway acts as a single entry point for all client requests to the underlying microservices. It functions as a reverse proxy that routes requests, performs authentication and authorization, handles cross-cutting concerns like logging and rate limiting, and sometimes transforms responses.
 
 ## Naming Rule of API endpoint
 - Use Nouns for Resources: Use nouns to represent resources (e.g., restaurants, orders, users).
