@@ -10,8 +10,9 @@ import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/auth")
+@RequestMapping("/api/v1/food-delivery-app/auth")
 public class AuthController {
+
     @Autowired
     private AuthService service;
 

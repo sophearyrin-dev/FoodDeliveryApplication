@@ -28,12 +28,12 @@ public class JwtService {
         return createToken(claims, userName);
     }
 
-    private String createToken(Map<String, Object> claims, String userName) {
+    private String createToken(Map<String, Object> claims, String UserNameSubject) {
         return Jwts.builder()
                 .setClaims(claims)
-                .setSubject(userName)
+                .setSubject(UserNameSubject)
                 .setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 30))
+                .setExpiration(new Date(System.currentTimeMillis() + 1000 * 60 * 30)) // Sets the expiration time for the token. the token expires in 30 minutes
                 .signWith(getSignKey(), SignatureAlgorithm.HS256).compact();
     }
 
