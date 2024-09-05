@@ -53,6 +53,8 @@ public ResponseEntity<RestaurantDTO> getRestaurantById(@PathVariable("restaurant
 }
 ```
 ## Security using JWT authentication with API gateway and Eureka Server
+![image](https://github.com/user-attachments/assets/dc9784ec-5c88-4004-9395-56cea897f8ba)
+
 - JWT.io. (2024). Introduction to JSON Web Tokens. JWT.io. Retrieved September 5, 2024, from https://jwt.io/introduction
 - Xoriant. (2023, March 1). Microservices security using JWT authentication gateway. Xoriant. Retrieved September 5, 2024, from https://www.xoriant.com/blog/microservices-security-using-jwt-authentication-gateway
 
