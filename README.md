@@ -56,6 +56,15 @@ public ResponseEntity<RestaurantDTO> getRestaurantById(@PathVariable("restaurant
 - JWT.io. (2024). Introduction to JSON Web Tokens. JWT.io. Retrieved September 5, 2024, from https://jwt.io/introduction
 - Xoriant. (2023, March 1). Microservices security using JWT authentication gateway. Xoriant. Retrieved September 5, 2024, from https://www.xoriant.com/blog/microservices-security-using-jwt-authentication-gateway
 
+## Project Flow
+1. Client sends a request to http://api-gateway:8080/api/v1/food-delivery-app/restaurants.
+2. API Gateway checks its routing rules and uses Eureka Server to find available instances of the restaurant-service.
+3. API Gateway validates the JWT token included in the request.
+4. Load Balancer (if configured) distributes the request to one of the instances of restaurant-service.
+5. Restaurant Service processes the request and returns the response to the API Gateway.
+6. API Gateway forwards the response back to the client.
+
+
 ## Technology used:
 Frontend:
 - Angular, Typescript
