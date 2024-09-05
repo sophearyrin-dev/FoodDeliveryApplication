@@ -6,6 +6,16 @@ spring:
           uri: lb://RESTAURANT-SERVICE
           predicates:
             - Path=/api/v1/food-delivery-app/restaurants/**
+          filters:
+            - AuthenticationFilter
+
+        - id: security-service
+          uri: lb://SECURITY-SERVICE
+          predicates:
+            - Path=/api/v1/food-delivery-app/auth/**
+          filters:
+            - AuthenticationFilter
+
   application:
     name: API-GATEWAY
 
