@@ -58,6 +58,9 @@ public ResponseEntity<RestaurantDTO> getRestaurantById(@PathVariable("restaurant
 - JWT.io. (2024). Introduction to JSON Web Tokens. JWT.io. Retrieved September 5, 2024, from https://jwt.io/introduction
 - Xoriant. (2023, March 1). Microservices security using JWT authentication gateway. Xoriant. Retrieved September 5, 2024, from https://www.xoriant.com/blog/microservices-security-using-jwt-authentication-gateway
 
+## Service Communication with Feign Client
+- GeeksforGeeks. (Sep, 2024). Spring boot microservices communication using feignclient with example. GeeksforGeeks. Retrieved from https://www.geeksforgeeks.org/spring-boot-microservices-communication-using-feignclient-with-example/
+
 ## Project Flow
 1. Client sends a request to http://api-gateway:8080/api/v1/food-delivery-app/restaurants.
 2. API Gateway checks its routing rules and uses Eureka Server to find available instances of the restaurant-service.
