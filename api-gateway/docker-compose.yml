@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  eureka-service:
+    image: sophearyrin/eureka-service:0.0.1
+    ports:
+      - "8761:8761"
+
+  security-service:
+    image: sophearyrin/security-service:0.0.1
+    ports:
+      - "8082:8082"
+
+  restaurant-service:
+    image: sophearyrin/restaurant-service:0.0.1
+    ports:
+      - "9091:9091"
+
+  api-gateway:
+    image: sophearyrin/apigateway-service:0.0.1
+    ports:
+      - "8080:8080"
+    depends_on:
+      - eureka-service
+      - security-service
+      - restaurant-service
+    environment:
+      - JWT_SECRET_KEY=your-secret-key-here
