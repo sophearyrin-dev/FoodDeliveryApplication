@@ -2,21 +2,21 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: restaurant-service
+        - id: RESTAURANT-SERVICE
           uri: lb://RESTAURANT-SERVICE
           predicates:
             - Path=/api/v1/food-delivery-app/restaurants/**
           filters:
             - AuthenticationFilter
 
-        - id: catalog-service
+        - id: CATALOG-SERVICE
           uri: lb://CATALOG-SERVICE
           predicates:
             - Path=/api/v1/food-delivery-app/catalogs/**
           filters:
             - AuthenticationFilter
 
-        - id: security-service
+        - id: SECURITY-SERVICE
           uri: lb://SECURITY-SERVICE
           predicates:
             - Path=/api/v1/food-delivery-app/auth/**
