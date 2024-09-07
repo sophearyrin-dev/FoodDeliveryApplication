@@ -12,6 +12,6 @@ import java.util.List;
 @NoArgsConstructor
 public class FoodCatalogPage {
 
-    private List<FoodItem> foodItems;
-    private Restaurant restaurant;
+    private List<FoodItemDTO> foodItems;
+    private RestaurantDTO restaurant;
 }

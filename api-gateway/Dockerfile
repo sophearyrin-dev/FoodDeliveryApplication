@@ -7,10 +7,10 @@
 WORKDIR /opt
 
 # Copy the JAR file from the target directory and rename it
-COPY target/Restaurant-0.0.1-SNAPSHOT.jar /opt/my-app.jar
+COPY target/api-gateway-0.0.1-SNAPSHOT.jar /opt/my-app.jar
 
 # Expose the port the app runs on (e.g., 8080)
-EXPOSE 9091
+EXPOSE 8080
 
 # Set an environment variable for the secret, fallback if not provided
 ENV JWT_SECRET_KEY=default-secret-key
