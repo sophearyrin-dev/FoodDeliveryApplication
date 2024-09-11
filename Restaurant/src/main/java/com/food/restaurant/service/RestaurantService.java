@@ -2,8 +2,10 @@ package com.food.restaurant.service;
 
 import com.food.restaurant.dto.RestaurantDTO;
 import com.food.restaurant.entity.Restaurant;
+import com.food.restaurant.exception.ResourceNotFoundException;
 import com.food.restaurant.mapper.RestaurantMapper;
 import com.food.restaurant.repository.RestaurantRepository;
+import com.food.restaurant.utility.ErrorMessages;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -41,10 +43,13 @@ public class RestaurantService {
     }
 
     public ResponseEntity<RestaurantDTO> getRestaurantById(int restaurantId) {
-       Optional<Restaurant> restaurant = restaurantRepository.findById(restaurantId);
-       if(restaurant.isPresent()){
-           return new ResponseEntity<>(RestaurantMapper.INSTANCE.mapRestaurantToRestaurantDTO(restaurant.get()), HttpStatus.FOUND);
-       }
-       return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+        Optional<Restaurant> restaurant = restaurantRepository.findById(restaurantId);
+        if (restaurant.isPresent()) {
+            RestaurantDTO restaurantDTO = RestaurantMapper.INSTANCE.mapRestaurantToRestaurantDTO(restaurant.get());
+            return new ResponseEntity<>(restaurantDTO, HttpStatus.OK);
+        } else {
+            throw new ResourceNotFoundException(ErrorMessages.ERROR_RESTAURANT_NOT_FOUND + restaurantId);
+        }
     }
+
 }
