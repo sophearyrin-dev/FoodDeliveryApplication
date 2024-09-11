@@ -10,8 +10,11 @@
 ## API Gateway
 An API Gateway acts as a single entry point for all client requests to the underlying microservices. It functions as a reverse proxy that routes requests, performs authentication and authorization, handles cross-cutting concerns like logging and rate limiting, and sometimes transforms responses.
 
-## Kafka
+## Kafka (Next)
 - Kafka is typically used for asynchronous communication between services. Instead of making direct HTTP calls, services can publish messages to Kafka topics, and other services can subscribe to these topics to consume the messages.
+
+## Exception Handler
+An Exception Handler is a mechanism used to handle exceptions that occur in a Spring application in a centralized and consistent way. It helps to manage errors and exceptions gracefully and provides customized error responses to the client
 
 ## Naming Rule of API endpoint
 - Use Nouns for Resources: Use nouns to represent resources (e.g., restaurants, orders, users).
