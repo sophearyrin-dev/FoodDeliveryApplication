@@ -37,11 +37,11 @@ public class FoodCatalogService {
 
 
     private RestaurantDTO getRestaurantByRestaurantId(int restaurantId) {
-        String url = "http://RESTAURANT-SERVICE/api/v1/food-delivery-app/restaurants/";
-        RestaurantDTO restaurant = restTemplate.getForObject(url + restaurantId, RestaurantDTO.class);
-        return restaurant;
+//        String url = "http://RESTAURANT-SERVICE/api/v1/food-delivery-app/restaurants/";
+//        RestaurantDTO restaurant = restTemplate.getForObject(url + restaurantId, RestaurantDTO.class);
+//        return restaurant;
 
-        //return restaurantClient.getRestaurantById(restaurantId);
+        return restaurantClient.getRestaurantById(restaurantId);
     }
 
     public FoodCatalogPage getRestaurantDetailByRestaurantId(int restaurantId){
