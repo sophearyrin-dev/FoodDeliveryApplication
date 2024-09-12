@@ -8,7 +8,14 @@
 - Eureka Client: Each microservice instance registers with the Eureka server and can also discover other services.
 
 ## API Gateway
-An API Gateway acts as a single entry point for all client requests to the underlying microservices. It functions as a reverse proxy that routes requests, performs authentication and authorization, handles cross-cutting concerns like logging and rate limiting, and sometimes transforms responses.
+- An API Gateway acts as a single entry point for all client requests to the underlying microservices. It functions as a reverse proxy that routes requests, performs authentication and authorization, handles cross-cutting concerns like logging and rate limiting, and sometimes transforms responses.
+- @EnableZuulProxy: is used to enable the Zuul API Gateway in a microservices architecture. Zuul is a routing gateway that forwards requests to appropriate backend services based on the request path. It acts as an intermediary between clients and the microservices, offering features like routing, load balancing, security, and filtering.
+```java
+<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-netflix-zuul</artifactId>
+</dependency>
+```
 
 ## Kafka (Next)
 - Kafka is typically used for asynchronous communication between services. Instead of making direct HTTP calls, services can publish messages to Kafka topics, and other services can subscribe to these topics to consume the messages.
