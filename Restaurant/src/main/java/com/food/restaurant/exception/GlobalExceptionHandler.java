@@ -1,29 +1,22 @@
 package com.food.restaurant.exception;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
-import java.sql.Timestamp;
-
 @ControllerAdvice
 @Slf4j
-public class GlobalExceptionHandler  {
+public class GlobalExceptionHandler {
 
-    //Custom exception handler for ResourceNotFoundException
-    @ExceptionHandler(value= ResourceNotFoundException.class)
-    public ResponseEntity<ErrorResponse> handleResourceNotFoundException(ResourceNotFoundException ex){
-        //log.error(HttpStatus.NOT_FOUND + ex.getMessage());
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(
-                new ErrorResponse(
-                        HttpStatus.NOT_FOUND.value(),
-                        ex.getMessage(),
-                        new Timestamp(System.currentTimeMillis())
-                )
-        );
+    private final ExceptionStrategyContext strategyContext = new ExceptionStrategyContext();
+
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<ErrorResponse> handleExceptions(Exception ex) {
+        log.error("Exception caught: {}", ex.getMessage());
+        return strategyContext.handleException(ex);
     }
+}
 
 //    //Custom exception handler for SupplierAlreadyExistsException
 //    @ExceptionHandler(value=SupplierAlreadyExistsException.class)
@@ -105,4 +98,3 @@ public class GlobalExceptionHandler  {
 //        log.error(ex.getMessage(), ex);
 //        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new ErrorResponse(HttpStatus.INTERNAL_SERVER_ERROR.value(),ex.getMessage()));
 //    }
-}
