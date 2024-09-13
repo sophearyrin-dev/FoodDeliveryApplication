@@ -28,6 +28,19 @@ An Exception Handler is a mechanism used to handle exceptions that occur in a Sp
 - This RestaurantMapper interface defines the mapping methods between Restaurant and RestaurantDTO. **MapStruct** will automatically generate the implementation at compile time if you configure it correctly.
 - MapStruct is a Java-based annotation processor that generates code at compile time for mapping between Java beans, such as converting an entity to a DTO and vice versa. It eliminates the need for manual mapping code, which can be verbose and error-prone, by generating the necessary code automatically.
 
+## Strategy Pattern
+![image](https://github.com/user-attachments/assets/4ae44f5e-c78a-4600-9da9-463a975c1ef3)
+
+- Strategy pattern: defines a family of behaviors, puts each of them into a separate class and makes their objects interchangeable.
+- Key Components of the Strategy Pattern:
+	- Strategy Interface: This defines a common interface for all supported algorithms.
+	- Concrete Strategies: These are the classes that implement the Strategy interface, providing specific implementations of the algorithm.
+	- Context: This class uses a Strategy instance to execute the algorithm. It can change the strategy dynamically if needed.
+
+<img width="794" alt="image" src="https://github.com/user-attachments/assets/ff3fd7a2-1d83-4bf9-bc0e-bdd1df8b101e">
+
+https://refactoring.guru/design-patterns/strategy
+
 ## Naming Rule of API endpoint
 - Use Nouns for Resources: Use nouns to represent resources (e.g., restaurants, orders, users).
 - Plural Form: Use the plural form for resource names when referring to collections (e.g., /restaurants, /orders).
