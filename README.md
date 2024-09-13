@@ -23,6 +23,11 @@
 ## Exception Handler
 An Exception Handler is a mechanism used to handle exceptions that occur in a Spring application in a centralized and consistent way. It helps to manage errors and exceptions gracefully and provides customized error responses to the client
 
+## Mapper
+- @Mapper is an annotation provided by the MapStruct library, which is a code generator that greatly simplifies the implementation of mappings between Java objects, especially when converting between Data Transfer Objects (DTOs) and entities in your application.
+- This RestaurantMapper interface defines the mapping methods between Restaurant and RestaurantDTO. **MapStruct** will automatically generate the implementation at compile time if you configure it correctly.
+- MapStruct is a Java-based annotation processor that generates code at compile time for mapping between Java beans, such as converting an entity to a DTO and vice versa. It eliminates the need for manual mapping code, which can be verbose and error-prone, by generating the necessary code automatically.
+
 ## Naming Rule of API endpoint
 - Use Nouns for Resources: Use nouns to represent resources (e.g., restaurants, orders, users).
 - Plural Form: Use the plural form for resource names when referring to collections (e.g., /restaurants, /orders).
