@@ -2,6 +2,7 @@ package com.food.restaurant.exception;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.MethodArgumentNotValidException;
 
 import java.sql.Timestamp;
 import java.util.HashMap;
@@ -12,7 +13,8 @@ public class ExceptionStrategyContext {
 
     public ExceptionStrategyContext() {
         strategies.put(ResourceNotFoundException.class, new ResourceNotFoundStrategy());
-        strategies.put(ValidationException.class, new ValidationExceptionStrategy());
+        //strategies.put(ValidationException.class, new ValidationExceptionStrategy());
+        strategies.put(MethodArgumentNotValidException.class, new MethodArgumentNotValidExceptionStrategy()); // Add this line
     }
 
     public ResponseEntity<ErrorResponse> handleException(Exception exception) {
@@ -27,4 +29,5 @@ public class ExceptionStrategyContext {
         ), HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }
+
 

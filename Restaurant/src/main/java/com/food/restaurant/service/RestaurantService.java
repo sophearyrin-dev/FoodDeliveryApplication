@@ -3,10 +3,10 @@ package com.food.restaurant.service;
 import com.food.restaurant.dto.RestaurantDTO;
 import com.food.restaurant.entity.Restaurant;
 import com.food.restaurant.exception.ResourceNotFoundException;
-import com.food.restaurant.exception.ValidationException;
 import com.food.restaurant.mapper.RestaurantMapper;
 import com.food.restaurant.repository.RestaurantRepository;
 import com.food.restaurant.utility.ErrorMessages;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -35,9 +35,6 @@ public class RestaurantService {
     }
 
     public RestaurantDTO addRestaurantInDB(RestaurantDTO restaurantDTO) {
-        if (restaurantDTO.getName() == null || restaurantDTO.getName().isEmpty()) {
-            throw new ValidationException(ErrorMessages.ERROR_RESTAURANT_MUST_NOT_EMPTY);
-        }
         Restaurant restaurant = restaurantMapper.mapRestaurantDTOToRestaurant(restaurantDTO);
         restaurant = restaurantRepository.save(restaurant);
         return restaurantMapper.mapRestaurantToRestaurantDTO(restaurant);
