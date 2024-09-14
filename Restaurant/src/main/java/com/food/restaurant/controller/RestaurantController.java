@@ -2,9 +2,11 @@ package com.food.restaurant.controller;
 
 import com.food.restaurant.dto.RestaurantDTO;
 import com.food.restaurant.service.RestaurantService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -25,7 +27,7 @@ public class RestaurantController {
     }
 
     @PostMapping
-    public ResponseEntity<RestaurantDTO> addRestaurant(@RequestBody RestaurantDTO restaurantDTO){
+    public ResponseEntity<RestaurantDTO> addRestaurant(@Valid @RequestBody RestaurantDTO restaurantDTO){
         RestaurantDTO restaurantDtoAdded = restaurantService.addRestaurantInDB(restaurantDTO);
         return new ResponseEntity<>(restaurantDtoAdded, HttpStatus.CREATED);
     }

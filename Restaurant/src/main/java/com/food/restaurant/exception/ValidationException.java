@@ -1,8 +1,8 @@
-package com.food.restaurant.exception;
-
-public class ValidationException extends RuntimeException {
-    public ValidationException(String message) {
-        super(message);
-    }
-}
-
+//package com.food.restaurant.exception;
+//
+//public class ValidationException extends RuntimeException {
+//    public ValidationException(String message) {
+//        super(message);
+//    }
+//}
+//
