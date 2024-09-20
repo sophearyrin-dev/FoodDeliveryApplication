@@ -134,6 +134,9 @@ Deployment:
 - ArgoCD
 - CI/CD
 
+Project Management:
+- Trello: https://trello.com/b/0fDFzA7L/pos
+
 Methodology:
 - Agile
 - Scrum
