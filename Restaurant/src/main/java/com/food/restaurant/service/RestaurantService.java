@@ -1,12 +1,12 @@
 package com.food.restaurant.service;
 
-import com.food.restaurant.dto.RestaurantDTO;
+import com.food.restaurant.dto.request.RestaurantRequest;
+import com.food.restaurant.dto.response.RestaurantResponse;
 import com.food.restaurant.entity.Restaurant;
 import com.food.restaurant.exception.ResourceNotFoundException;
 import com.food.restaurant.mapper.RestaurantMapper;
 import com.food.restaurant.repository.RestaurantRepository;
 import com.food.restaurant.utility.ErrorMessages;
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,24 +27,24 @@ public class RestaurantService {
         this.restaurantMapper = RestaurantMapper.INSTANCE;
     }
 
-    public List<RestaurantDTO> findAllRestaurants() {
+    public List<RestaurantResponse> findAllRestaurants() {
         return restaurantRepository.findAll()
                 .stream()
-                .map(restaurantMapper::mapRestaurantToRestaurantDTO)
+                .map(restaurantMapper::mapRestaurantToRestaurantResponse)
                 .collect(Collectors.toList());
     }
 
-    public RestaurantDTO addRestaurantInDB(RestaurantDTO restaurantDTO) {
-        Restaurant restaurant = restaurantMapper.mapRestaurantDTOToRestaurant(restaurantDTO);
+    public RestaurantResponse createRestaurant(RestaurantRequest restaurantRequest) {
+        Restaurant restaurant = restaurantMapper.mapRestaurantRequestToRestaurant(restaurantRequest);
         restaurant = restaurantRepository.save(restaurant);
-        return restaurantMapper.mapRestaurantToRestaurantDTO(restaurant);
+        return restaurantMapper.mapRestaurantToRestaurantResponse(restaurant);
     }
 
-    public ResponseEntity<RestaurantDTO> getRestaurantById(int restaurantId) {
+    public ResponseEntity<RestaurantResponse> getRestaurantById(int restaurantId) {
         Restaurant restaurant = restaurantRepository.findById(restaurantId)
                 .orElseThrow(() -> new ResourceNotFoundException(ErrorMessages.ERROR_RESTAURANT_NOT_FOUND+ restaurantId));
 
-        RestaurantDTO restaurantDTO = restaurantMapper.mapRestaurantToRestaurantDTO(restaurant);
-        return new ResponseEntity<>(restaurantDTO, HttpStatus.OK);
+        RestaurantResponse restaurantResponse = restaurantMapper.mapRestaurantToRestaurantResponse(restaurant);
+        return new ResponseEntity<>(restaurantResponse, HttpStatus.OK);
     }
 }
