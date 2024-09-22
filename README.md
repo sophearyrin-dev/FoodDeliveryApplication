@@ -94,6 +94,14 @@ public ResponseEntity<RestaurantDTO> getRestaurantById(@PathVariable("restaurant
 ## Service Communication with Feign Client
 - GeeksforGeeks. (Sep, 2024). Spring boot microservices communication using feignclient with example. GeeksforGeeks. Retrieved from https://www.geeksforgeeks.org/spring-boot-microservices-communication-using-feignclient-with-example/
 
+## Solid Principle
+
+S - Single Responsibility Principle (SRP)
+O - Open/Closed Principle (OCP)
+L - Liskov Substitution Principle (LSP)
+I - Interface Segregation Principle (ISP)
+D - Dependency Inversion Principle (DIP)
+
 ## Project Flow
 1. Client sends a request to http://api-gateway:8080/api/v1/food-delivery-app/restaurants.
 2. API Gateway checks its routing rules and uses Eureka Server to find available instances of the restaurant-service.
