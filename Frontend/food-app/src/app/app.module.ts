@@ -8,19 +8,24 @@ import { RestaurantListingModule } from './restaurant-listing/restaurant-listing
 import { HttpClientModule } from '@angular/common/http';
 import { FoodCatalogueModule } from './food-catalogue/food-catalogue.module';
 import { OrderSummaryModule } from './order-summary/order-summary.module';
+import { LoginModule } from './login/login.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { LoginComponent } from './login/components/login.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HeaderModule,
+    LoginModule,
     RestaurantListingModule,
     HttpClientModule,
     FoodCatalogueModule,
-    OrderSummaryModule
+    OrderSummaryModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

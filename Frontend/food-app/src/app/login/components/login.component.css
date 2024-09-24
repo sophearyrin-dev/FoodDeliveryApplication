@@ -1,0 +1,60 @@
+/* Main container for the registration form */
+.register-container {
+  max-width: 400px;  /* Set a maximum width */
+  margin: 0 auto;  /* Center the container */
+  padding: 20px;  /* Add padding */
+  border: 1px solid #ccc;  /* Add a border */
+  border-radius: 8px;  /* Round the corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Add a subtle shadow */
+  background-color: #f9f9f9;  /* Light background color */
+}
+
+/* Heading style */
+.register-container h2 {
+  text-align: center;  /* Center the heading */
+  color: #333;  /* Darker color for the heading */
+}
+
+/* Form group styling */
+.form-group {
+  margin-bottom: 15px;  /* Space between form groups */
+}
+
+/* Label styling */
+label {
+  display: block;  /* Make labels block elements */
+  margin-bottom: 5px;  /* Space below labels */
+  font-weight: bold;  /* Bold labels */
+}
+
+/* Input field styling */
+input.form-control {
+  width: 100%;  /* Full width */
+  padding: 10px;  /* Padding inside input */
+  border: 1px solid #ccc;  /* Border for inputs */
+  border-radius: 4px;  /* Rounded corners for inputs */
+  box-sizing: border-box;  /* Include padding in width calculation */
+}
+
+/* Error message styling */
+.error {
+  color: red;  /* Red color for error messages */
+  font-size: 12px;  /* Smaller font size for errors */
+}
+
+/* Button styling */
+.btn {
+  background-color: #007bff;  /* Blue background */
+  color: white;  /* White text */
+  padding: 10px 15px;  /* Padding around button text */
+  border: none;  /* No border */
+  border-radius: 4px;  /* Rounded corners for buttons */
+  cursor: pointer;  /* Pointer cursor on hover */
+  font-size: 16px;  /* Increase font size */
+  transition: background-color 0.3s;  /* Smooth transition for hover effect */
+}
+
+/* Button hover effect */
+.btn:hover {
+  background-color: #0056b3;  /* Darker blue on hover */
+}
