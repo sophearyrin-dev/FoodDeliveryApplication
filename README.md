@@ -1,7 +1,7 @@
 
 # Food Delivery Application (In progress)
 
-# Project Architecture (working on it)
+## Project Architecture (working on it)
 
 ## Important topic to review before setting up this project
 ## Eureka Server
