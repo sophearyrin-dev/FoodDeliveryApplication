@@ -1,16 +1,7 @@
-// import { Component } from '@angular/core';
-
-// @Component({
-//   selector: 'app-login',
-//   templateUrl: './login.component.html',
-//   styleUrl: './login.component.css'
-// })
-// export class LoginComponent {
-
-// }
-
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -21,32 +12,48 @@ export class LoginComponent {
   registerForm: FormGroup;
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder) {
-    // Initialize the form with form controls and validators
+  constructor(
+    private formBuilder: FormBuilder, 
+    private http: HttpClient, 
+    private router: Router
+  ) {
     this.registerForm = this.formBuilder.group({
-      name: ['', Validators.required],  // Name is required
-      email: ['', [Validators.required, Validators.email]],  // Email must be valid
-      password: ['', [Validators.required, Validators.minLength(6)]]  // Password must be at least 6 characters
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]]
     });
   }
 
-  // Getter to access form controls
   get f() {
     return this.registerForm.controls;
   }
 
-  // Handle form submission
   onSubmit() {
-    this.submitted = true;  // Set the submitted flag to true
+    this.submitted = true;
 
-    // Stop here if form is invalid
     if (this.registerForm.invalid) {
       return;
     }
 
-    // Handle form submission logic (e.g., send data to a server)
-    console.log('Form Data:', this.registerForm.value);
-    alert('Registration successful!');
+    const registerData = {
+      name: this.registerForm.value.name,
+      email: this.registerForm.value.email,
+      password: this.registerForm.value.password
+    };
+
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+
+    this.http.post('http://localhost:8080/api/v1/food-delivery-app/auth/register', registerData, { headers })
+      .subscribe({
+        next: (response) => {
+          console.log('Registration successful!', response);
+          alert('Registration successful!');
+          this.router.navigate(['/login']);
+        },
+        error: (error) => {
+          console.error('Registration failed', error);
+          alert('Registration failed. Please try again.');
+        }
+      });
   }
 }
-
