@@ -85,6 +85,15 @@ public ResponseEntity<RestaurantDTO> getRestaurantById(@PathVariable("restaurant
     return restaurantService.getRestaurantById(id);
 }
 ```
+# @PathVariable:
+
+Used for extracting values from the URL path.
+Typically used for resource identifiers.
+Example URL: /employees/{id}
+# @RequestParam:
+Used for extracting query parameters from the URL.
+Typically used for optional filters or criteria.
+Example URL: /employees?name=bopha
 ## Security using JWT authentication with API gateway and Eureka Server
 ![image](https://github.com/user-attachments/assets/dc9784ec-5c88-4004-9395-56cea897f8ba)
 
