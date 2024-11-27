@@ -94,6 +94,10 @@ Example URL: /employees/{id}
 Used for extracting query parameters from the URL.
 Typically used for optional filters or criteria.
 Example URL: /employees?name=bopha
+
+# When to Use Path Varaibale and Request Param
+- Use @PathVariable to extract values from the URL path segments
+- Use @RequestParam to extract values from query parameters in the URL. Best suited when the value is optional, filtering, or modifying the request.
 ## Security using JWT authentication with API gateway and Eureka Server
 ![image](https://github.com/user-attachments/assets/dc9784ec-5c88-4004-9395-56cea897f8ba)
 
